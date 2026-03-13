@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ProductViewSet, CartViewSet, CartItemViewSet, RegisterView, OrderViewSet, CategoryViewSet, DeleteUserView
+from .views import ProductViewSet, CartViewSet, CartItemViewSet, RegisterView, OrderViewSet, CategoryViewSet, DeleteUserView, ping_despertador
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -20,4 +20,5 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('register/', RegisterView.as_view(), name='register'),
     path('user/me/', DeleteUserView.as_view(), name='delete-user'),
+    path('ping-despertador/', ping_despertador, name='ping'),
 ]
